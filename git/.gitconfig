@@ -1,0 +1,26 @@
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[user]
+	name = jibedoubleve
+	email = jibedoubleve@gmail.com
+[alias]
+	a     = commit --amend
+	bl    = branch -l
+	c     = !git add . && git commit -am 
+	cb    = branch --show-current
+	co    = checkout	
+	graph = log --graph --oneline -20
+	paf   = fetch --prune --all
+	graph = log --graph --oneline -15
+	lol   = log --oneline -15	
+	p     = pull
+	purge = !git branch --verbose | grep '\\[gone\\]' | awk '{ print $1 }' | xargs git branch --delete --force
+	s     = status -s
+	wip   = !git add . && git commit -am "wip"
+[safe]
+	directory = D:/Projects/project-perdeval
+[core]
+	editor = micro
