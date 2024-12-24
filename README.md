@@ -29,23 +29,5 @@ Git only contains alias and not much more...
 
 ### Installation script
 
-```powershell
-# Modules
-Install-Module -Name PowerShellGet -Force
-Install-Module -Name Terminal-Icons -Repository PSGallery
-Install-Module -Name "F7History"
-
-# Cli
-choco install fd -y
-choco install fzf -y
-choco install bat -y
-choco install ripgrep -y
-choco install jq -y
-choco install far -y
-choco install micro -y
-choco install lazygit -y
-choco install oh-my-posh -y
-
-# dotnet tools
-dotnet tool install -g csharprepl
-```
+* Execute the script `install.ps1` only once to install all the needed tools
+* Add into the `$PROFILE` this line `."<path_to>\profile.ps1"`
