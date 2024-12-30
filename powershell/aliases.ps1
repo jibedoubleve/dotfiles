@@ -2,8 +2,6 @@
 ## ALIASES
 ###############################################################################
 Set-Alias dc     "C:\Program Files\Double Commander\doublecmd.exe"
-Set-Alias dch    Invoke-DcHere
-Set-Alias logoff Invoke-LogOff
 Set-Alias halt   Invoke-Halt
 Set-Alias npp    "C:\Program Files\Notepad++\notepad++.exe"
 Set-Alias c      code
@@ -23,6 +21,10 @@ Set-Alias far    "C:\Program Files\Far Manager\Far.exe"
 ##########################################################################
 ## ALIASES FUNCTIONS
 ###############################################################################
+function halt { shutdown -s -t 0 }
+function logoff { shutdown /l }
+function dch { dc -C --no-splash -T $(Get-Location) }
+function ghb { gh browse }
 function fnd($query) {
     fd $query `
         --type file `

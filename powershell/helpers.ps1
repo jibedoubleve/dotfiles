@@ -9,15 +9,6 @@ function Test-Administrator {
 function Edit-Profile {
     code $PROFILE
 }
-function Invoke-DcHere {
-    dc -C --no-splash -T $(Get-Location)
-}
-function Invoke-LogOff {
-    shutdown /l
-}
-function Invoke-Halt {
-    shutdown -s -t 0
-}
 function Invoke-Aws {
 	$pem = "C:\Users\jibedoubleve\Documents\Lanceur2\oss_key.pem"
 	ssh -i $pem ubuntu@ec2-15-237-113-93.eu-west-3.compute.amazonaws.com
