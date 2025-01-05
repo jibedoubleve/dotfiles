@@ -14,6 +14,7 @@ choco install micro -y
 choco install lazygit -y
 choco install oh-my-posh -y
 choco install doublecmd -y
+choco install ntop.portable -y
 
 # dotnet tools
 dotnet tool install -g csharprepl

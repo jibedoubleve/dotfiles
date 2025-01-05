@@ -26,6 +26,7 @@ Git only contains alias and not much more...
 * [Far Manager](https://www.farmanager.com/)
 * [Micro Editor](https://github.com/zyedidia/micro)
 * [LazyGit](https://github.com/jesseduffield/lazygit)
+* [Ntop](https://github.com/gsass1/NTop)
 
 ### Installation script
 
