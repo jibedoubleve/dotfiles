@@ -21,6 +21,7 @@ Set-Alias far    "C:\Program Files\Far Manager\Far.exe"
 ##########################################################################
 ## ALIASES FUNCTIONS
 ###############################################################################
+function prj { cd "D:\Projects" }
 function ghb { gh browse }
 function halt { shutdown -s -t 0 }
 function logoff { shutdown /l }
