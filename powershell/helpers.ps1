@@ -7,7 +7,7 @@ function Test-Administrator {
     (New-Object Security.Principal.WindowsPrincipal $user).IsInRole([Security.Principal.WindowsBuiltinRole]::Administrator)
 }
 function Edit-Profile {
-    code $PROFILE
+    code "D:\Projects\dotfiles\"
 }
 function Invoke-Aws {
 	$pem = "C:\Users\jibedoubleve\Documents\Lanceur2\oss_key.pem"
