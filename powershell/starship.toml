@@ -1,0 +1,24 @@
+[directory]
+truncation_length = 0
+truncate_to_repo = false
+
+[git_branch]
+symbol = ' '             # symbole devant le nom de la branche
+format = '[$symbol$branch]($style) '
+style = 'red bold'
+
+[git_status]
+conflicted = '⚠ $count '
+untracked  = ' $count '
+modified   = '✎ $count '
+staged     = '✔ $count '
+deleted    = '✘ $count '
+renamed    = '➜ $count '
+stashed    = '≡ $count '
+
+format = '([$all_status]($style) $ahead_behind) '  
+style = 'yellow'
+
+[ruby]
+disabled = true
+
