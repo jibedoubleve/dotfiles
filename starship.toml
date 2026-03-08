@@ -3,7 +3,7 @@ truncation_length = 0
 truncate_to_repo = false
 
 [git_branch]
-symbol = ' '             # symbole devant le nom de la branche
+symbol = ' '             # prefix of the branch name 
 format = '[$symbol$branch]($style) '
 style = 'red bold'
 

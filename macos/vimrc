@@ -6,3 +6,7 @@ set nu rnu
 
 " Enable mouse support in all modes
 set mouse=a
+
+" Handle colours
+set termguicolors
+colorscheme catppuccin_mocha
