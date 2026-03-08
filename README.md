@@ -15,6 +15,9 @@ The script will back up any existing config files (e.g. `~/.gitconfig` → `~/.g
 
 - **Git** — symlinks `git/gitconfig` to `~/.gitconfig`
 - **Starship** — symlinks `starship.toml` to `~/.config/starship.toml`
+- **Zsh** — symlinks `macos/zshrc` to `~/.zshrc`
+- **Tmux** — symlinks `macos/tmux.conf` to `~/.tmux.conf`
+- **Vim** — symlinks `macos/vimrc` to `~/.vimrc`
 
 ## Git
 
