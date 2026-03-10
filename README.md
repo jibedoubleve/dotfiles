@@ -18,6 +18,12 @@ The script will back up any existing config files before symlinking the dotfiles
 
 Use `-f` / `--force` to overwrite existing symlinks.
 
+The module Terminal-Icons needs Nerd Fonts. I use JetBrains Mono
+
+```powershell
+winget install --id DEVCOM.JetBrainsMonoNerdFont
+```
+
 ## Installation (macOS)
 
 Clone the repository and run the install script:
