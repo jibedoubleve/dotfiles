@@ -1,0 +1,46 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[user]
+	name = jibedoubleve
+	email = jibedoubleve@users.noreply.github.com
+
+[core]
+	editor = vim
+	autocrlf = input
+	fsmonitor = false
+	pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[include]
+	path = $HOME/.config/delta/themes/catppuccin.gitconfig
+
+[delta]
+    navigate = true # use n and N to move between diff sections
+    line-numbers=true
+    side-by-side=true
+    features = catppuccin-mocha
+    syntax-theme = Catppuccin Mocha
+
+[merge]
+    conflictStyle = zdiff3
+
+[alias]
+	a     = commit --amend
+	bl    = branch -l
+	c     = !git add . && git commit -am 
+	cb    = branch --show-current
+	co    = checkout	
+	graph = log --graph --oneline -20
+	paf   = fetch --prune --all
+	graph = log --graph --oneline -15
+	lol   = log --oneline -15	
+	p     = pull
+	purge = !git branch --verbose | grep '\\[gone\\]' | awk '{ print $1 }' | xargs git branch --delete --force
+	s     = status -s
+	wip   = !git add . && git commit -am "wip"
