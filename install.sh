@@ -68,11 +68,12 @@ install() {
 }
 
 DOTFILES=(
-    "$DOTFILES_DIR/git/gitconfig:$HOME/.gitconfig"
-    "$DOTFILES_DIR/starship.toml:$HOME/.config/starship.toml"
+    "$DOTFILES_DIR/common/gitconfig:$HOME/.gitconfig"
+    "$DOTFILES_DIR/common/starship.toml:$HOME/.config/starship.toml"
+    "$DOTFILES_DIR/common/vimrc:$HOME/.vimrc"
+    "$DOTFILES_DIR/common/lazygit.yml:$HOME/Library/Application Support/lazygit/config.yml"
     "$DOTFILES_DIR/macos/zshrc:$HOME/.zshrc"
     "$DOTFILES_DIR/macos/tmux.conf:$HOME/.tmux.conf"
-    "$DOTFILES_DIR/vimrc:$HOME/.vimrc"
 )
 
 cyan "Configure Dotfiles..."

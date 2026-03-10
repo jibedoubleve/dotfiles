@@ -64,10 +64,11 @@ function Install-Link {
 
 # Dotfiles: each entry is @(Source, Destination)
 $Dotfiles = @(
-    @("$DotfilesDir\git\gitconfig"         , "$HOME\.gitconfig"),
-    @("$DotfilesDir\starship.toml"         , "$HOME\.config\starship.toml"),
-    @("$DotfilesDir\powershell\profile.ps1", "$HOME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"),
-    @("$DotfilesDir\vimrc"                 , "$HOME\_vimrc")
+    @("$DotfilesDir\common\gitconfig"      , "$HOME\.gitconfig"),
+    @("$DotfilesDir\common\starship.toml"  , "$HOME\.config\starship.toml"),
+    @("$DotfilesDir\common\vimrc"          , "$HOME\_vimrc"),
+    @("$DotfilesDir\common\lazygit.yml"    , "$env:APPDATA\lazygit\config.yml"),
+    @("$DotfilesDir\powershell\profile.ps1", "$HOME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1")
 )
 
 Write-Host "Configure Dotfiles..." -ForegroundColor Cyan
