@@ -43,3 +43,9 @@ let g:netrw_winsize = 25        " Set sidebar width to 25% of the screen
 
 " Toggle the file explorer with Ctrl+n
 nnoremap <silent> <C-n> :Lexplore<CR>
+
+" --- Tabulation/Space management ---
+set tabstop     =4 " Visual width of a tab character (in columns)
+set shiftwidth  =4 " Number of spaces used for auto-indentation
+set softtabstop =4 " Number of spaces inserted when pressing TAB
+set expandtab      " Convert tabs to spaces for consistent formattingnable syntax highlighting
