@@ -104,6 +104,18 @@ if (-not (Test-Path $batThemesPath)) {
     Write-Host "  SKIPPED: already configured" -ForegroundColor Yellow
 }
 
+Write-Host "Configure Vim Lightline..." -ForegroundColor Cyan
+$lightlinePath = "$HOME\vimfiles\pack\plugins\start\lightline"
+$lightlineUrl = "https://github.com/itchyny/lightline.vim"
+
+if (-not (Test-Path $lightlinePath)) {
+    git clone $lightlineUrl $lightlinePath
+    Remove-Item -Recurse -Force "$lightlinePath\.git"
+    Write-Host "  Installed: $lightlinePath" -ForegroundColor Cyan
+} else {
+    Write-Host "  SKIPPED: already configured" -ForegroundColor Yellow
+}
+
 Write-Host "Configure Vim Catppuccin theme..." -ForegroundColor Cyan
 $vimColorsPath = "$HOME\vimfiles\colors\catppuccin_mocha.vim"
 $vimThemeUrl = "https://raw.githubusercontent.com/catppuccin/vim/main/colors/catppuccin_mocha.vim"

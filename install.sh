@@ -109,6 +109,18 @@ else
     yellow "  SKIPPED: already configured"
 fi
 
+cyan "Configure Vim Lightline..."
+lightline_path="$HOME/.vim/pack/plugins/start/lightline"
+lightline_url="https://github.com/itchyny/lightline.vim"
+
+if [[ ! -d "$lightline_path" ]]; then
+    git clone "$lightline_url" "$lightline_path"
+    rm -rf "$lightline_path/.git"
+    cyan "  Installed: $lightline_path"
+else
+    yellow "  SKIPPED: already configured"
+fi
+
 cyan "Configure Vim Catppuccin theme..."
 vim_colors_path="$HOME/.vim/colors/catppuccin_mocha.vim"
 vim_theme_url="https://raw.githubusercontent.com/catppuccin/vim/main/colors/catppuccin_mocha.vim"
