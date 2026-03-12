@@ -22,6 +22,10 @@ set laststatus=2
 set showmode
 set showcmd
 
+" Ensure plugin dirs are in runtimepath regardless of launch context
+" (~/.vim for macOS/Linux, ~/vimfiles for Windows)
+set runtimepath+=~/.vim,~/.vim/after,~/vimfiles,~/vimfiles/after
+
 " Apply the Catppuccin theme
 " Note: If you use a plugin manager, ensure 'catppuccin/vim' is installed
 colorscheme catppuccin_mocha
