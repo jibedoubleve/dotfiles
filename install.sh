@@ -108,3 +108,15 @@ if [[ ! -d "$bat_themes_path" ]]; then
 else
     yellow "  SKIPPED: already configured"
 fi
+
+cyan "Configure Vim Catppuccin theme..."
+vim_colors_path="$HOME/.vim/colors/catppuccin_mocha.vim"
+vim_theme_url="https://raw.githubusercontent.com/catppuccin/vim/main/colors/catppuccin_mocha.vim"
+
+if [[ ! -f "$vim_colors_path" ]]; then
+    mkdir -p "$(dirname "$vim_colors_path")"
+    curl -L "$vim_theme_url" -o "$vim_colors_path"
+    cyan "  Theme installed: $vim_colors_path"
+else
+    yellow "  SKIPPED: already configured"
+fi
