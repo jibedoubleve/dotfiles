@@ -31,7 +31,7 @@ function Backup-Dotfile {
     }
 }
 
-function Install-Link {
+function Install-Copy {
     param (
         [string]$Src,
         [string]$Dst
@@ -49,16 +49,13 @@ function Install-Link {
         return
     }
 
+    if ((Test-Path -Path $Dst) -and (Get-Item $Dst -Force).LinkType) {
+        Remove-Item -Path $Dst -Force
+    }
+
     if (Backup-Dotfile -Dst $Dst) {
-        if ($Force -and (Test-Path -Path $Dst)) {
-            Remove-Item -Path $Dst -Force
-        }
-
-        $ItemType = if (Test-Path -Path $Src -PathType Container) { "Directory" } else { "Junction" }
-        if ($ItemType -eq "Junction") { $ItemType = "SymbolicLink" }
-
-        New-Item -ItemType SymbolicLink -Path $Dst -Target $Src | Out-Null
-        Write-Host "  Linked: $Src -> $Dst" -ForegroundColor Cyan
+        Copy-Item -Path $Src -Destination $Dst -Force:$Force
+        Write-Host "  Copied: $Src -> $Dst" -ForegroundColor Cyan
     }
 }
 
@@ -75,7 +72,7 @@ Write-Host "Configure Dotfiles..." -ForegroundColor Cyan
 foreach ($Entry in $Dotfiles) {
     $FileName = Split-Path $Entry[0] -Leaf
     Write-Host "  Configuring $FileName..." -ForegroundColor White
-    Install-Link -Src $Entry[0] -Dst $Entry[1]
+    Install-Copy -Src $Entry[0] -Dst $Entry[1]
 }
 
 Write-Host "Configure Delta..." -ForegroundColor Cyan

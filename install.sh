@@ -35,16 +35,16 @@ backup() {
     fi
 }
 
-link() {
+copy_file() {
     local src="$1"
     local dst="$2"
 
     if $FORCE; then
-        ln -sf "$src" "$dst"
+        cp -f "$src" "$dst"
     else
-        ln -s "$src" "$dst"
+        cp "$src" "$dst"
     fi
-    cyan "  Linked: $src -> $dst"
+    cyan "  Copied: $src -> $dst"
 }
 
 install() {
@@ -62,8 +62,12 @@ install() {
         return 0
     fi
 
+    if [[ -L "$dst" ]]; then
+        rm "$dst"
+    fi
+
     if backup "$dst"; then
-        link "$src" "$dst"
+        copy_file "$src" "$dst"
     fi
 }
 
