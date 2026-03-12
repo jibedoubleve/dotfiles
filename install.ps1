@@ -103,3 +103,15 @@ if (-not (Test-Path $batThemesPath)) {
 } else {
     Write-Host "  SKIPPED: already configured" -ForegroundColor Yellow
 }
+
+Write-Host "Configure Vim Catppuccin theme..." -ForegroundColor Cyan
+$vimColorsPath = "$HOME\vimfiles\colors\catppuccin_mocha.vim"
+$vimThemeUrl = "https://raw.githubusercontent.com/catppuccin/vim/main/colors/catppuccin_mocha.vim"
+
+if (-not (Test-Path $vimColorsPath)) {
+    New-Item -ItemType Directory -Force -Path (Split-Path $vimColorsPath) | Out-Null
+    curl.exe -L $vimThemeUrl -o $vimColorsPath
+    Write-Host "  Theme installed: $vimColorsPath" -ForegroundColor Cyan
+} else {
+    Write-Host "  SKIPPED: already configured" -ForegroundColor Yellow
+}
