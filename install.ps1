@@ -40,8 +40,8 @@ function Install-Copy {
     $ParentDir = Split-Path -Path $Dst -Parent
 
     if (-not (Test-Path -Path $ParentDir)) {
-        Write-Host "  SKIPPED: $Src — directory $ParentDir does not exist" -ForegroundColor Yellow
-        return
+        New-Item -ItemType Directory -Force -Path $ParentDir | Out-Null
+        Write-Host "  Created: $ParentDir" -ForegroundColor Cyan
     }
 
     if (-not (Test-Path -Path $Src)) {
