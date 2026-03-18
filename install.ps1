@@ -64,7 +64,7 @@ $Dotfiles = @(
     @("$DotfilesDir\common\gitconfig"      , "$HOME\.gitconfig"),
     @("$DotfilesDir\common\starship.toml"  , "$HOME\.config\starship.toml"),
     @("$DotfilesDir\common\vimrc"          , "$HOME\_vimrc"),
-    @("$DotfilesDir\common\lazygit.yml"    , "$env:APPDATA\lazygit\config.yml"),
+    @("$DotfilesDir\common\lazygit.yml"    , "$env:LOCALAPPDATA\lazygit\config.yml"),
     @("$DotfilesDir\powershell\profile.ps1", "$HOME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1")
 )
 
