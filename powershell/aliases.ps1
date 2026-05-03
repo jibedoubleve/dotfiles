@@ -18,6 +18,7 @@ Set-Alias lpr    Invoke-Projects
 Set-Alias lsp    Search-Projects 
 Set-Alias far    "C:\Program Files\Far Manager\Far.exe"
 Set-Alias wgc    wingetcreate 
+Set-Alias csr    csharprepl.exe
 
 ##########################################################################
 ## ALIASES FUNCTIONS
