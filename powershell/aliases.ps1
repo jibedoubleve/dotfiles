@@ -4,7 +4,8 @@
 Set-Alias dc     "C:\Program Files\Double Commander\doublecmd.exe"
 Set-Alias halt   Invoke-Halt
 Set-Alias npp    "C:\Program Files\Notepad++\notepad++.exe"
-Set-Alias c      code
+Set-Alias c      "codium"
+Set-Alias code   "codium"
 Set-Alias g      git
 Set-Alias dn     dotnet
 Set-Alias rider  rider64.exe
