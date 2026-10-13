@@ -10,22 +10,17 @@ Set-Alias g      git
 Set-Alias dn     dotnet
 Set-Alias rider  rider64.exe
 Set-Alias rr     rider64.exe
-Set-Alias m      micro.exe
 Set-Alias lg     lazygit.exe
 Set-Alias aws    Invoke-Aws
 Set-Alias btop   "C:\_Tools\btop4win\btop4win.exe"
-Set-Alias csr    csharprepl
 Set-Alias lpr    Invoke-Projects
 Set-Alias lsp    Search-Projects 
 Set-Alias far    "C:\Program Files\Far Manager\Far.exe"
-Set-Alias wgc    wingetcreate 
 Set-Alias csr    csharprepl.exe
 
 ##########################################################################
 ## ALIASES FUNCTIONS
 ###############################################################################
-function prj { cd "D:\Projects" }
-function ghb { gh browse }
 function halt { shutdown -s -t 0 }
 function logoff { shutdown /l }
 function dch { dc -C --no-splash -T $(Get-Location) }
