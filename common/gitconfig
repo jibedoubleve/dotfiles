@@ -43,3 +43,4 @@
 	p     = pull
 	purge = !git branch --verbose | grep '\\[gone\\]' | awk '{ print $1 }' | xargs git branch --delete --force
 	s     = status -s
+    fu = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf --height=99% | awk '{print $1}' | xargs -r -o git commit --fixup"
