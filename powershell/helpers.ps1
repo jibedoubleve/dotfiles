@@ -38,14 +38,14 @@ function Search-Projects {
     Set-Location $([System.IO.Path]::GetDirectoryName($sln))    
 }
 function Measure-Execution($action, $title) {
-    Write-Host "$title ...`t`t" -NoNewline     
+    Write-Host ('{0,-35}' -f "$title ...") -NoNewline     
     try {
         $totalTime = (
             Measure-Command {                
                 &$action
                 Write-Host " Done" -ForegroundColor Green -NoNewline
             }).TotalMilliseconds
-        Write-Host " in $([Math]::Round($totalTime)) ms"
+        Write-Host (" in {0,3} ms" -f [Math]::Round($totalTime))
     } catch {
         Write-Host "ERROR: $($_)" -ForegroundColor Red -BackgroundColor Yellow
     }  

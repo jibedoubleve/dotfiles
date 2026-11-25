@@ -12,9 +12,10 @@
 ## HEADER
 ###############################################################################
 # If it is not an interactive prompt, useless to load the profile
-if (!([Environment]::UserInteractive -and -not $([Environment]::GetCommandLineArgs() | Where-Object { $_ -like '-NonI*' }))) {
-    return
-}
+if (!([Environment]::UserInteractive `
+    -and -not $([Environment]::GetCommandLineArgs() | Where-Object { $_ -like '-NonI*' }))
+) 
+{ return }
 
 ###############################################################################
 ## FONCTIONS
@@ -28,6 +29,12 @@ $prj = "D:\Projects"
 Measure-Execution  {
     Import-Module Terminal-Icons
 } -Title "Configuring Terminal-Icons"
+
+Measure-Execution {
+    Set-PSReadLineOption -PredictionSource History
+    Set-PSReadLineOption -PredictionViewStyle ListView
+    Set-PSReadLineOption -EditMode Windows
+} -Title "Configuring PSReadline"
 ###############################################################################
 ## MODULE CONFIGURATION
 ###############################################################################
@@ -36,16 +43,6 @@ Measure-Execution {
    Invoke-Expression (&starship init powershell)    
 } -Title "Configuring Starship"
 
-Measure-Execution {
-    Import-Module PSReadLine
-    Set-PSReadLineOption -PredictionSource History
-    Set-PSReadLineOption -PredictionViewStyle ListView
-    Set-PSReadLineOption -EditMode Windows
-} -Title "Configuring PSReadline"
-
-Measure-Execution {
-    Import-Module -Name "F7History"
-} -Title "Configuring F7History"
 
 Measure-Execution {
     Invoke-Expression (& { (zoxide init powershell | Out-String) })
@@ -66,9 +63,8 @@ Measure-Execution {
     }
 } -Title "Importing Chocolatey profile"
 
-###############################################################################
-## CONFIGURATION
-###############################################################################
-# if ($env:WT_SESSION) {
-#     Set-Theme Paradox
-# }
+Measure-Execution {
+    atuin init powershell | Out-String | Invoke-Expression
+} -Title "Configuring Atuin"    
+
+Write-Host "----------"
