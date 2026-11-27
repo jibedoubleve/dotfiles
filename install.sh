@@ -76,9 +76,13 @@ DOTFILES=(
     "$DOTFILES_DIR/common/starship.toml:$HOME/.config/starship.toml"
     "$DOTFILES_DIR/common/vimrc:$HOME/.vimrc"
     "$DOTFILES_DIR/common/lazygit.yml:$HOME/Library/Application Support/lazygit/config.yml"
+    "$DOTFILES_DIR/common/atuin.toml:$HOME/.config/atuin/config.toml"
     "$DOTFILES_DIR/macos/zshrc:$HOME/.zshrc"
     "$DOTFILES_DIR/macos/tmux.conf:$HOME/.tmux.conf"
 )
+
+# Not created by atuin until its first run
+mkdir -p "$HOME/.config/atuin"
 
 cyan "Configure Dotfiles..."
 for entry in "${DOTFILES[@]}"; do

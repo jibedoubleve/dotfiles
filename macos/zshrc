@@ -26,6 +26,11 @@ alias pc="podman-compose"
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Atuin (must stay after fzf to take over Ctrl-R)
+if command -v atuin >/dev/null 2>&1; then
+  eval "$(atuin init zsh)"
+fi
+
 # dotnet tools
 export PATH=$HOME/.dotnet/tools:$PATH
 
